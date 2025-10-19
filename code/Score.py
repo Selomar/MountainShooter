@@ -27,16 +27,16 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(48, 'YOU WIN!', C_AQUA, SCORE_POS['Title'])
+            text = 'Enter Player1 name:'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-                text = 'Enter Player1 name:'
             if game_mode == MENU_OPTION[1]:
                 score = (player_score[0] + player_score[1]) / 2
                 text = 'Enter Team name:'
             if game_mode == MENU_OPTION[2]:
                 if player_score[0] > player_score[1]:
                     score = player_score[0]
-                    text = 'Enter Player1 name:'
                 else:
                     score = player_score[1]
                     text = 'Enter Player2 name:'
@@ -71,7 +71,7 @@ class Score:
 
         for player_score in list_score:
             id, name, score, date = player_score
-            self.score_text(20, f'{name}    {score : 05d}   {date}', C_WHITE, SCORE_POS[list_score.index(player_score)])
+            self.score_text(20, f'{name}    {score: 05d}   {date}', C_WHITE, SCORE_POS[list_score.index(player_score)])
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -82,13 +82,11 @@ class Score:
                         return
             pygame.display.flip()
 
-
     def score_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
-
 
 def get_formatted_date():
     current_datetime = datetime.now()

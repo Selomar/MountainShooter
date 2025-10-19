@@ -7,7 +7,7 @@ from pygame.font import Font
 from pygame.rect import Rect
 from pygame.surface import Surface
 
-from code.Const import C_WHITE, SCORE_POS, C_ORANGE, MENU_OPTION, C_AQUA
+from code.Const import C_WHITE, SCORE_POS, C_ORANGE, MENU_OPTION
 from code.DBProxy import DBProxy
 
 
@@ -26,7 +26,7 @@ class Score:
         name = ''
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.score_text(48, 'YOU WIN!', C_AQUA, SCORE_POS['Title'])
+            self.score_text(48, 'YOU WIN!', C_ORANGE, SCORE_POS['Title'])
             text = 'Enter Player1 name:'
             score = player_score[0]
             if game_mode == MENU_OPTION[0]:

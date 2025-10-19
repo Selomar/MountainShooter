@@ -1,4 +1,5 @@
-:[alt text]() # Mountain Shooter :[alt text]()
+![alt text](https://github.com/Selomar/MountainShooter/blob/master/asset/Player2.png) # Mountain Shooter ![alt text](https://github.com/Selomar/MountainShooter/blob/master/asset/Player2.png)
+===============
 
 ### About
 
